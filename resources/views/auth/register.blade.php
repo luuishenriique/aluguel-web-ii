@@ -19,6 +19,27 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <!-- Surname -->
+            <div>
+                <x-label for="surname" :value="__('Surname')" />
+
+                <x-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus />
+            </div>
+
+            <!-- Adress -->
+            <div>
+                <x-label for="adress" :value="__('Adress')" />
+
+                <x-input id="adress" class="block mt-1 w-full" type="text" name="adress" :value="old('adress')" required autofocus />
+            </div>
+
+            <!-- Zip Code -->
+            <div>
+                <x-label for="zip_code" :value="__('Zip Code')" />
+
+                <x-input id="zip_code" class="block mt-1 w-full" type="text" name="zip_code" :value="old('zip_code')" required autofocus />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
