@@ -9,17 +9,17 @@ class Rent extends Model
 {
     use HasFactory;
 
-    public class users()
+    public function users()
     {
     	$this->belongsTo(User::class);
     }
 
-    public class instruments()
+    public function instruments()
     {
     	$this->belongsTo(Instrument::class);
     }
 
-    public class orders()
+    public function orders()
     {
     	$this->belongsTo(Order::class);
     }

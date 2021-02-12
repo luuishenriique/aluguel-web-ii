@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    public class rents()
+    public function rents()
     {
     	$this->hasMany(Rent::class);
     }
