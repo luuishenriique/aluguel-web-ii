@@ -13,6 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(5)->create(['is_employee' => 0]);
+        \App\Models\User::factory(5)->create(['is_employee' => 1]);
+        \App\Models\Instrument::factory(5)->create(['status' => 1]);
+        \App\Models\Instrument::factory(5)->create(['status' => 0]);
+        $this->call([
+        	RentSeeder::class,
+        	OrderSeeder::class,
+        ]);
     }
 }
