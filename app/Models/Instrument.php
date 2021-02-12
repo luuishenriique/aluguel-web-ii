@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Instrument extends Model
 {
     use HasFactory;
+
+    public class rents()
+    {
+    	$this->hasMany(Rent::class);
+    }
 }
