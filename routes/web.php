@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InstrumentController;
+use App\Http\Controllers\RentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,11 @@ Route::get('/dashboard/employee', function () {
 Route::get('/instruments', function () {
     return view('instruments');
 })->middleware(['auth'])->name('instruments');
+
+Route::model('Instrument', Instrument::class);
+Route::get('/dashboard/delete/{instrument}',[InstrumentController::class, 'destroy'])->name('rm-instrument');
+
+Route::get('/delete/{rent}',[RentController::class, 'destroy'])->name('rm-rent');
 
 Route::post('/instruments',[InstrumentController::class, 'store'])->name('add-instrument');
 
