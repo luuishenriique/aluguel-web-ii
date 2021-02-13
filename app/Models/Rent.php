@@ -11,16 +11,16 @@ class Rent extends Model
 
     public function users()
     {
-    	$this->belongsTo(User::class);
+    	return $this->belongsTo(User::class);
     }
 
     public function instruments()
     {
-    	$this->belongsTo(Instrument::class);
+    	return $this->belongsTo(Instrument::class);
     }
 
     public function orders()
     {
-    	$this->belongsTo(Order::class);
+    	return $this->belongsTo(Order::class);
     }
 }

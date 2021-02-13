@@ -11,6 +11,6 @@ class Instrument extends Model
 
     public function rents()
     {
-    	$this->hasMany(Rent::class);
+    	return $this->hasMany(Rent::class);
     }
 }
