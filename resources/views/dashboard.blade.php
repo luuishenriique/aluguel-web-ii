@@ -1,15 +1,15 @@
 <style type="text/css">
 
     table{
-         border-collapse: collapse;
-         text-align: center;
-    }
-    table td{
-         border: 1px dotted black;
-    }
-    table th{
-        border: 1px dotted black;
-    }
+       border-collapse: collapse;
+       text-align: center;
+   }
+   table td{
+       border: 1px dotted black;
+   }
+   table th{
+    border: 1px dotted black;
+}
 </style>
 
 <x-app-layout>
@@ -41,20 +41,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($rents as $rent)
-                            @php
-                            $orders = App\Models\Order::where('rent_id', $rent->id)->get();
-                            @endphp
-                            <tr>
-                            <td>{{$rent->id}}</td>
-                            <td>{{$rent->date_out}}</td>
-                            <td>{{$rent->date_in}}</td>
-                            <td>{{$rent->instrument_id}}</td>
-                            @foreach($orders as $order)
-                            <td>{{$order->total}}</td>
-                            @endforeach
-                            </tr>
-                            @endforeach
+                                @foreach($rents as $rent)
+                                @php
+                                $orders = App\Models\Order::where('rent_id', $rent->id)->get();
+                                @endphp
+                                <tr>
+                                    <td>{{$rent->id}}</td>
+                                    <td>{{$rent->date_out}}</td>
+                                    <td>{{$rent->date_in}}</td>
+                                    <td>{{$rent->instrument_id}}</td>
+                                    @foreach($orders as $order)
+                                    <td>{{$order->total}}</td>
+                                    @endforeach
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

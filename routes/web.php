@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InstrumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard/employee', function () {
+    return view('employee');
+})->middleware(['auth'])->name('employee');
+
+Route::get('/instruments', function () {
+    return view('instruments');
+})->middleware(['auth'])->name('instruments');
+
+Route::post('/instruments',[InstrumentController::class, 'store'])->name('add-instrument');
 
 require __DIR__.'/auth.php';

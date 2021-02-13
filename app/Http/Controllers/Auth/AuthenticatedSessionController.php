@@ -32,7 +32,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (Auth::user()->is_employee > 0) {
+
+            return redirect(RouteServiceProvider::HOME_EMP);
+            
+        } else {
+
         return redirect(RouteServiceProvider::HOME);
+
+        }
+
     }
 
     /**
