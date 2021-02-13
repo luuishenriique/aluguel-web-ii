@@ -38,6 +38,7 @@
                                     <th>Data de devolução</th>
                                     <th>Cod. Instrumento</th>
                                     <th>Valor($)</th>
+                                    <th>Opções</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +54,7 @@
                                     @foreach($orders as $order)
                                     <td>{{$order->total}}</td>
                                     @endforeach
+                                    <td><a class="bg-red-200 rounded hover:bg-red-300" href="{{ route('rm-rent', $rent)}}">Excluir</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>
